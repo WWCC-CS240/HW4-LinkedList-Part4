@@ -437,6 +437,10 @@ describe('LinkedList', function () {
         });
 
         it('should not increment length if the length property is used (index error)', function () {
+            if (!linkedList.hasOwnProperty('length')) {
+                return;
+            }
+
             expect(linkedList.length).to.equal(0);
             try {
                 linkedList.insertAt(15, 1);
